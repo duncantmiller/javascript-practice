@@ -3,12 +3,13 @@
     <head>
         <script>
             function toggle_message() {
-                if (document.querySelector('h1').innerHTML === "Hello!") {
+                const heading = document.querySelector('h1');
+                if (heading.innerHTML === "Hello!") {
                     message = "Goodbye!";
                 } else {
                     message = "Hello!";
                 }
-                document.querySelector('h1').innerHTML = message;
+                heading.innerHTML = message;
             }
         </script>
     </head>

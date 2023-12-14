@@ -2,19 +2,19 @@
 <html lang="en">
     <head>
         <script>
-            function toggle_message() {
-                const heading = document.querySelector('h1');
-                if (heading.innerHTML === "Hello!") {
-                    message = "Goodbye!";
-                } else {
-                    message = "Hello!";
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector('form').onsubmit = function() {
+                    const name = document.querySelector('#name').value;
+                    alert(`Hello, ${name}`)
                 }
-                heading.innerHTML = message;
-            }
+            });
         </script>
     </head>
     <body>
         <h1>Hello!</h1>
-        <button onclick="toggle_message()">Toggle</button>
+        <form>
+            <input autofocus id="name" placeholder="Name" type="text">
+            <input type="submit">
+        </form>
     </body>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            function toggle_message() {
+                if (document.querySelector('h1').innerHTML === "Hello!") {
+                    message = "Goodbye!";
+                } else {
+                    message = "Hello!";
+                }
+                document.querySelector('h1').innerHTML = message;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Hello!</h1>
+        <button onclick="toggle_message()">Toggle</button>
+    </body>
+</html>

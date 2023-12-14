@@ -3,18 +3,34 @@
     <head>
         <script>
             document.addEventListener("DOMContentLoaded", function() {
-                fetch('https://api.exchangeratesapi.io/latest?base=USD')
-                .then(response => response.json())
-                .then(data => {
-                    const rate = data.rates.EUR;
-                    document.querySelector('body').innerHTML = `1 USD is equal to ${rate.toFixed(3)} EUR.`
-                })
-                .catch(error => {
-                    console.log('Error', error);
-                });
+
+                document.querySelector('form').onsubmit = function() {
+                    fetch('https://api.exchangeratesapi.io/latest?base=USD')
+                    .then(response => response.json())
+                    .then(data => {
+                        const currency = document.querySelector('#currency').value.toUpperCase();
+                        const rate = data.rates[currency];
+                        if (rate !== undefined) {
+                            document.querySelector('body').innerHTML = `1 USD is equal to ${rate.toFixed(3)} {currency}.`;
+                        } else {
+                            document.querySelector('body').innerHTML = `invalid currency.`;
+                        }
+                    })
+                    .catch(error => {
+                        console.log('Error', error);
+                    });
+                    return False;
+                }
             });
         </script>
     </head>
     <body>
+        <form>
+            <input id="currency" placeholder="currency" type="text">
+            <input type="submit" value="Convert">
+        </form>
+        <div id="result">
+
+        </div>
     </body>
 </html>

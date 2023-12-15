@@ -7,25 +7,19 @@
             }
         </style>
         <script>
-            function setDisplayNone(element) {
-                element.style.display = 'none';
-            }
-
             function showPage(page) {
-                document.querySelectorAll('div').forEach(setDisplayNone);
+                document.querySelectorAll('div').forEach(div => {
+                    div.style.display = 'none';
+                })
                 document.querySelector(`#${page}`).style.display = 'block';
             }
 
-            function runButton() {
-                showPage(this.dataset.page);
-            }
-
-            function setButtonClick(button) {
-                button.onclick = runButton;
-            }
-
             document.addEventListener('DOMContentLoaded', function() {
-                document.querySelectorAll('button').forEach(setButtonClick);
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = function() {
+                        showPage(this.dataset.page);
+                    }
+                })
             })
         </script>
     </head>

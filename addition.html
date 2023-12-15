@@ -13,13 +13,21 @@
 
                 const [state, setState] = React.useState({
                     num1: 1,
-                    num2: 2
+                    num2: 2,
+                    response: ''
                 });
+
+                function updateResponse(event) {
+                    setState({
+                        ...state,
+                        response: event.target.value
+                    });
+                }
 
                 return (
                     <div>
                         <div>{state.num1} + {state.num2}</div>
-                        <input />
+                        <input onChange={updateResponse} value={state.response}/>
                     </div>
                 )
             }

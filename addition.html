@@ -11,12 +11,14 @@
         <script type="text/babel">
             function App() {
 
-                const [num1, setNum1] = React.useState(1);
-                const [num2, setNum2] = React.useState(2);
+                const [state, setState] = React.useState({
+                    num1: 1,
+                    num2: 2
+                });
 
                 return (
                     <div>
-                        <div>{num1} + {num2}</div>
+                        <div>{state.num1} + {state.num2}</div>
                         <input />
                     </div>
                 )

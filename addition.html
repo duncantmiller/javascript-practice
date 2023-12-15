@@ -24,10 +24,17 @@
                         if (state.num1 + state.num2 == answer) {
                             setState({
                                 ...state,
+                                response: '',
+                                num1: Math.ceil(Math.random() * 10),
+                                num2: Math.ceil(Math.random() * 10),
                                 score: state.score + 1
                             })
                         } else {
-
+                            setState({
+                                ...state,
+                                response: '',
+                                score: state.score - 1
+                            })
                         }
                     }
                 }

@@ -6,10 +6,21 @@
         <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     </head>
     <body>
-        <div id="app">
-
-        </div>
+        <div id="app"></div>
+        <div id="message"></div>
         <script type="text/babel">
+            function Hello() {
+                return <h2>Hello!</h2>
+            }
+            function Message() {
+                return (
+                    <div>
+                        <Hello />
+                        <Hello />
+                        <Hello />
+                    </div>
+                )
+            }
             function App() {
                 const x = 1;
                 const y = 2;
@@ -19,6 +30,7 @@
             }
 
             ReactDOM.render(<App />, document.querySelector('#app'))
+            ReactDOM.render(<Message />, document.querySelector('#message'))
         </script>
     </body>
 </html>

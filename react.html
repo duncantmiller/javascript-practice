@@ -9,18 +9,20 @@
         <div id="app"></div>
         <div id="message"></div>
         <script type="text/babel">
-            function Hello() {
-                return <h2>Hello!</h2>
+            function Hello(props) {
+                return <h2>Hello, {props.name}!</h2>
             }
+
             function Message() {
                 return (
                     <div>
-                        <Hello />
-                        <Hello />
-                        <Hello />
+                        <Hello name="Harry"/>
+                        <Hello name="Ron"/>
+                        <Hello name="Hermione"/>
                     </div>
                 )
             }
+
             function App() {
                 const x = 1;
                 const y = 2;

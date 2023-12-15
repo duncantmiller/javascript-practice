@@ -48,7 +48,7 @@
                 return (
                     <div>
                         <div>{state.num1} + {state.num2}</div>
-                        <input onChange={updateResponse} value={state.response} onKeyPress={inputKeyPress}/>
+                        <input autoFocus={true} onChange={updateResponse} value={state.response} onKeyPress={inputKeyPress}/>
                         <div>Score: {state.score}</div>
                     </div>
                 )
